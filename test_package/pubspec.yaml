@@ -1,0 +1,18 @@
+name: test_package
+description: snowflake flutter plugin. generate unique id.
+version: 0.0.1
+homepage: https://52smile.vip
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+  flutter: ">=2.12.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:

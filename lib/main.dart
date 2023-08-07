@@ -3,6 +3,7 @@ import 'package:flutter_blog/2023_03/gradient_view.dart';
 import 'package:flutter_blog/2023_03/leaf_fall_anim.dart';
 import 'package:flutter_blog/2023_04/anim_text.dart';
 import 'package:flutter_blog/func_test_page.dart';
+import 'package:test_package/test_package.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,14 +19,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  Container(
+      home:  SizedBox(
         height: 200,
         width: 200,
         child: Center(
-          child: CustomPaint(
-            painter: TornTextPainter(
-              textPaint: TextPaint(text: 'Torn Text', textStyle:TextStyle(fontSize: 20, color: Colors.white)),
-            ),
+          child: TextButton(
+            onPressed: () {
+              Snowflake sf = Snowflake(1, 1);
+              print(sf.nextId());
+
+            },
+            child: Text('点我'),
           )
         )
       )
