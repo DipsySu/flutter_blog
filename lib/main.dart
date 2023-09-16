@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blog/2023-08/ball_drop.dart';
+import 'package:flutter_blog/2023-08/formatter_NUM.dart';
+import 'package:flutter_blog/2023-08/jelly.dart';
 import 'package:flutter_blog/2023_03/gradient_view.dart';
 import 'package:flutter_blog/2023_03/leaf_fall_anim.dart';
 import 'package:flutter_blog/2023_04/anim_text.dart';
+import 'package:flutter_blog/card_anim.dart';
 import 'package:flutter_blog/func_test_page.dart';
 import 'package:test_package/test_package.dart';
-
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
 
   // This widget is the root of your application.
   @override
@@ -19,22 +23,32 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  SizedBox(
-        height: 200,
-        width: 200,
-        child: Center(
-          child: TextButton(
-            onPressed: () {
-              Snowflake sf = Snowflake(1, 1);
-              print(sf.nextId());
-
-            },
-            child: Text('点我'),
-          )
-        )
-      )
+      color: Colors.white,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Demo'),
+        ),
+        body: BallDropScreen()
+    ),
     );
   }
+}
+
+String formatNumberWithChineseComma(int number) {
+  String numStr = number.toString();
+  StringBuffer sb = StringBuffer();
+  int count = 0;
+
+  for (int i = numStr.length - 1; i >= 0; i--) {
+    sb.write(numStr[i]);
+    count++;
+    if (count == 3 && i != 0) {
+      sb.write(',');
+      count = 0;
+    }
+  }
+
+  return sb.toString().split('').reversed.join('');
 }
 
 

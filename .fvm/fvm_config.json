@@ -1,7 +1,5 @@
 {
-  "flutterSdkVersion": "stable",
-  "flavors": {
-    "staging": "3.10.3",
-    "production": "3.10.3"
-  }
+  "flutterSdkVersion": "3.7.0",
+  "flavors": {},
+  "dart.flutterSdkPaths": ["/Users/su/fvm/versions"]
 }
