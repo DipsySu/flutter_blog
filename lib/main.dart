@@ -4,7 +4,10 @@ import 'package:flutter_blog/2023-08/formatter_NUM.dart';
 import 'package:flutter_blog/2023-08/jelly.dart';
 import 'package:flutter_blog/2023_03/gradient_view.dart';
 import 'package:flutter_blog/2023_03/leaf_fall_anim.dart';
+import 'package:flutter_blog/2024-02/anim_view.dart';
+import 'package:flutter_blog/2024-02/light_view.dart';
 import 'package:flutter_blog/2023_04/anim_text.dart';
+import 'package:flutter_blog/2024-02/neon_text_view.dart';
 import 'package:flutter_blog/card_anim.dart';
 import 'package:flutter_blog/func_test_page.dart';
 import 'package:test_package/test_package.dart';
@@ -28,7 +31,9 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Demo'),
         ),
-        body: BallDropScreen()
+        body: Center(
+          child: AnimatedConicBorderWidget(),
+        )
     ),
     );
   }
