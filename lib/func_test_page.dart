@@ -1,9 +1,5 @@
-import 'dart:ffi';
-import 'package:scidart/numdart.dart';
-import 'package:scidart/scidart.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_blog/2023_03/filter_coefficients.dart';
 
 
 
@@ -12,6 +8,22 @@ class FunctionTestPage extends StatelessWidget {
   static int MODEL = 10;
 
 
+  String formatNumberWithChineseComma(int number) {
+    String numStr = number.toString();
+    StringBuffer sb = StringBuffer();
+    int count = 0;
+
+    for (int i = numStr.length - 1; i >= 0; i--) {
+      sb.write(numStr[i]);
+      count++;
+      if (count == 3 && i != 0) {
+        sb.write(',');
+        count = 0;
+      }
+    }
+
+    return sb.toString().split('').reversed.join('');
+  }
 
   @override
   Widget build(BuildContext context) {
